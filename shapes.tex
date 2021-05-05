@@ -1,0 +1,228 @@
+\section{\href{https://github.com/d3/d3-shape}{Shapes}}
+
+\textit{Each of the following contain one eponymous top-level function that produces a \say{generator} which is a late-binding function that creates the indicated shape when called. Input to each generator is a data array. Output shapes are coded as \say{path calls,} which are either svg or html canvas commands (see \href{https://observablehq.com/@d3/d3-line}{here}) depending on the passed }\texttt{<shape>.context()}\textit{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-path}{Paths}}{<path>\textsubscript{G}}
+
+\textit{Generates: a serialized set of \href{https://observablehq.com/@d3/d3-path}{accumulated} SVG or \href{https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D}{HTML Canvas}-like path instructions.}\\
+
+{\footnotesize
+\begin{minipage}[t]{2.6cm}
+    moveTo\\
+    quadraticCurveTo\\
+    bezierCurveTo
+\end{minipage}
+\begin{minipage}[t]{1.8cm}
+    closePath\\
+    arc\\
+    rect
+\end{minipage}
+\begin{minipage}[t]{1.6cm}
+    lineTo\\
+    arcTo\\
+    toString
+\end{minipage}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#arcs}{Arcs}}{<arc>\textsubscript{G}}
+\textit{Generates: circular or annular sectors for use in \href{https://observablehq.com/@d3/pie-chart}{pie} or \href{https://observablehq.com/@d3/donut-chart}{donut} charts, respectively. Here, input data must provide start and end angles.}
+\\
+
+{\footnotesize
+\begin{minipage}[t]{2.1cm}
+    centroid\\
+    cornerRadius\\
+    padAngle
+\end{minipage}
+\begin{minipage}[t]{2.1cm}
+    innerRadius\\
+    startAngle\\
+    padRadius
+\end{minipage}
+\begin{minipage}[t]{1.8cm}
+    outerRadius\\
+    endAngle\\
+    context
+\end{minipage}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#lines}{Lines}}{\href{https://observablehq.com/@d3/d3-line}{<line>\textsubscript{G}}}
+\textit{Generates: a spline (smoothed curve) or polyline (piecewise-connected line) for use in a \href{https://observablehq.com/@d3/line-chart}{line} or \href{https://observablehq.com/@d3/hierarchical-edge-bundling}{edge-bundling} chart. There are two top-level calls: }\texttt{d3.line}\textsuperscript{l}\textit{, and }\texttt{d3.line-radial}\textsuperscript{r}\textit{.}\\
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    x\textsubscript{l}\\
+    y\textsubscript{l}\\
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    defined\\
+    curve\\
+    context
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    angle\textsubscript{r}\\
+    radius\textsubscript{r}\\
+\end{minipage}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#areas}{Areas}}{<area>\textsubscript{G}}
+\textit{Generates an area, for use in \href{https://observablehq.com/@d3/area-chart}{area} or \href{https://observablehq.com/@d3/difference-chart}{difference} charts. There are two top-level calls: }\texttt{d3.area}\textsuperscript{a}\textit{ and }\texttt{d3.areaRadial}\textsuperscript{r}\textit{.}\\
+{\footnotesize
+\begin{minipage}[t]{1.8cm}
+    x\textsuperscript{a}\\
+    x0\textsuperscript{a}\\
+    x1\textsuperscript{a}\\
+    y\textsuperscript{a}\\
+    y0\textsuperscript{a}\\
+    y1\textsuperscript{a}\\
+    defined\\
+    curve
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    context\\
+    lineX0\textsuperscript{a}\\
+    lineY0\textsuperscript{a}\\
+    lineX1\textsuperscript{a}\\
+    lineY1\textsuperscript{a}\\
+    angle\textsuperscript{r}\\
+    startAngle\textsuperscript{r}\\
+    endAngle\textsuperscript{r}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    radius\textsuperscript{r}\\
+    innerRadius\textsuperscript{r}\\
+    outerRadius\textsuperscript{r}\\
+    lineStartAngle\textsuperscript{r}\\
+    lineInnerRadius\textsuperscript{r}\\
+    lineEndAngle\textsuperscript{r}\\
+    lineOuterRadius\textsuperscript{r}
+\end{minipage}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#curves}{Curves}}{d3.curve-\textsubscript{F}}
+\textit{These are \underline{not} shapes, but passed to lines \& areas under their }\texttt{<shape>.curve()}\textit{ call. }\texttt{curve}\textit{s are algorithms that, given input data arrays (\say{control points}) yield smooth \href{https://en.wikipedia.org/wiki/Spline\_interpolation}{splines}.}
+{\footnotesize
+\begin{minipage}[t]{3.0cm}
+    Basis\\
+    BasisClosed\\
+    BasisOpen\\
+    Bundle\\
+    Cardinal\\
+    CardinalClosed\\
+    CardinalOpen\\
+    CatmullRom\\
+    CatmullRomClosed
+\end{minipage}
+\begin{minipage}[t]{3.0cm}
+    CatmullRomOpen\\
+    Linear\\
+    LinearClosed\\
+    MonotoneX\\
+    MonotoneY\\
+    Natural\\
+    Step\\
+    StepAfter\\
+    StepBefore
+\end{minipage}
+}
+\\
+
+
+\textit{One can also create \href{https://github.com/d3/d3-shape\#custom-curves}{custom curves}.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#links}{Links}}{<link>\textsubscript{G}}
+\textit{Generate a smooth line segment between passed source and target points for use in \href{https://observablehq.com/@d3/tidy-tree}{tree diagrams}. $\exists$ vertical\textsuperscript{l}, horizontal\textsuperscript{l}, and radial\textsuperscript{r} links.}
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    source\\
+    target\\
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    x\textsuperscript{l}\\
+    y\textsuperscript{l}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    context\\
+    angle\textsuperscript{r}
+    radius\textsuperscript{r}
+\end{minipage}
+}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#symbols}{Symbols}}{\href{https://observablehq.com/@d3/fitted-symbols}{d3.symbol-\textsubscript{G}}}
+
+\textit{Generate a }\texttt{symbol}\textit{:}\\
+
+\href{https://observablehq.com/@d3/fitted-symbols}{
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    Circle\\
+    Cross\\
+    Wye
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    Star\\
+    Square\\
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    Diamond\\
+    Triangle\\
+\end{minipage}
+}}
+\\
+
+
+
+\textit{Symbol generators provide the following methods:}\\
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    item
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    size
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    context
+\end{minipage}
+}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-polygon}{Polygons}}{d3.polygon-\textsubscript{G}}
+
+\texttt{d3.polygonHull}\textit{builds a polygon that covers an array of input points. Other top level functions access properties of the resulting polygon:}\\
+
+{\footnotesize
+\begin{minipage}[t]{1.5cm}
+    Area
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    Centroid
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    Contains
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    Length
+\end{minipage}
+}
+
+\\

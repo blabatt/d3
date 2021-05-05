@@ -1,0 +1,62 @@
+\section{\href{https://github.com/d3/d3-transition}{Transitions \& Animation}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{General Pattern}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{\href{https://github.com/d3/d3-ease}{Easings}}
+\textit{Visually \say{ease} the rate (acceleration) at which objects change their velocity. Preface the following with }\texttt{ease}\textit{, and optionally suffix with one of: }\texttt{In}, \texttt{Out},\textit{ or }\texttt{InOut}\textit{:}\\
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    Linear\\
+    Sin\\
+    Elastic
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    Quad\\
+    Exp\\
+    Back
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    Cubic\\
+    Circle\\
+    Bounce
+\end{minipage}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-interpolate}{Interpolators}}{d3}
+\textit{An }\texttt{interpolator}\textit{ is a function that takes a number }\texttt{i}\textit{$\in [0,1]$ and yields intermediary values in the domain-space of the specific interpolator. The following functions take two parameters that bookend the interpolation range (except for }\texttt{-Discrete}, \texttt{-Basis}\textit{, and }\texttt{-BasisClosed},\textit{ which take a single array), and yield interpolators (for color interpolators, see \say{color} section):}
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    interpolate\\
+    -Date\\
+    -Object\\
+    -Zoom\\
+    -BasisClosed
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    -Round\\
+    -Array\\
+    -TransformCss\\
+    \href{https://observablehq.com/@d3/d3-interpolatediscrete}{-Discrete}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    -String\\
+    -Numb. Array\\
+    -Svg\\
+    -Basis
+\end{minipage}
+}\\
+\textit{The last two are \say{splines}, which produce non-linear interpolators roughly following the given array. In addition, }\texttt{\href{https://observablehq.com/@d3/d3-piecewise}{d3.piecewise}}\textit{ generates a piecewise interpolation visiting the $n$ points of its input array, and }\href{https://observablehq.com/@d3/d3-quantize}{\texttt{d3.quantize}}\textit{ generates $n$ samples of a passed interpolator.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{\href{https://github.com/d3/d3-timer}{Timers}}
+
+

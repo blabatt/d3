@@ -1,0 +1,193 @@
+\section{\href{https://github.com/d3/d3-color/}{Colors}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection*{Color Creation [\texttt{d3}]}
+\subsec{Color Creation}{\texttt{d3}}
+\textit{Create a }\texttt{color}\textit{ from a }\texttt{<color\_spec>}\textit{:}
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    rgb\\
+    hsl
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    \href{https://en.wikipedia.org/wiki/Lab\_color\_space\#CIELAB}{lab}\\
+    hcl
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    \href{https://en.wikipedia.org/wiki/CIELAB\_color\_space\#Cylindrical\_representation:\_CIELCh\_or\_CIEHLC}{lch}\\
+    cubehelix
+\end{minipage}
+}
+
+
+\textit{...where }\texttt{<color\_spec>}\textit{ is a string that can be the name of the color or a type-specific constructor:}\\
+\entry{45mm}{rgb(255, 255, 255)}{\href{http://www.w3.org/TR/css3-color/\#colorunits}{RGB}}\\
+\entry{45mm}{hsl(120, 50\%, 20\%)}{\href{https://www.w3.org/TR/css-color-3/\#hsl-color}{HSL}}\\
+\entry{45mm}{\#ffeeaa}{\href{https://www.w3.org/TR/css-color-4/\#hex-notation}{hex}}\\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{Color Properties}{<\textit{color}>}
+\textit{Get }\texttt{color}\textit{ properties, or yield an externally-usable }\texttt{<color\_spec>}\textit{ string:}
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    opacity\\
+    rgb\\
+    toString
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    copy\\
+    displayable
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    formatHex\\
+    formatHsl\\
+    formatRgb
+\end{minipage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{Derivative Colors}{<\textit{color}>}
+\textit{Return a new, derivative }\texttt{color}\textit{:}
+
+
+{\footnotesize
+\begin{minipage}[t]{3.0cm}
+    brighter
+\end{minipage}
+\begin{minipage}[t]{3.0cm}
+    darker
+\end{minipage}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-scale-chromatic}{Color Schemes}}{\href{https://observablehq.com/@d3/color-schemes?collection=@d3/d3-scale-chromatic}{d3}}
+
+\textit{Categorical schemes, prefixed with scheme-}
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    Category10\\
+    Accent\\
+    Set1\\
+    Tableau
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    Dark2\\
+    Paired\\
+    Set2
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    Pastel1\\
+    Pastel2\\
+    Set3
+\end{minipage}
+}
+\\[1mm]
+
+\textit{Diverging schemes, prefixed with interpolate- (for continuous) or scheme- (for discrete):}
+
+{\footnotesize
+\begin{minipage}[t]{1.5cm}
+    BrBG\\
+    PiYG\\
+    Spectral
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    PRGn\\
+    PuOr
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    RdBu\\
+    RdGy
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    RdYlBu\\
+    RdYlGn
+\end{minipage}
+}
+\\[1mm]
+
+\textit{Sequential, single-hue schemes, prefixed with interpolate (continuous) or scheme- (discrete):}
+
+{\footnotesize
+\begin{minipage}[t]{1.5cm}
+    Blues\\
+    Purples
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    Greens\\
+    Reds
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    Greys
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    Oranges
+\end{minipage}
+}
+\\[1mm]
+
+\textit{Sequential, multi-hue schemes, prefixed with interpolate- or scheme-:}
+
+{\footnotesize
+\begin{minipage}[t]{1.5cm}
+    BuGn\\
+    PuBu\\
+    YlGn
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    BuPu\\
+    PuBuGn\\
+    YlGnBu
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    GnBu\\
+    PuRd\\
+    YlOrBr
+\end{minipage}
+\begin{minipage}[t]{1.5cm}
+    OrRd\\
+    RdPu\\
+    YlOrRd
+\end{minipage}
+}
+\\[1mm]
+
+\textit{Sequential, multi-hue schemes, available only in continuous form, prefixed with interpolate-:}\\
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    Cividis\\
+    Inferno\\
+    Turbo
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    Cool\\
+    Magma\\
+    Viridis
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    CubehelixDefault\\
+    Plasma\\
+    Warm
+\end{minipage}
+}
+\\[1mm]
+
+
+\textit{Cyclical schemes, prefixed with interpolate-:}
+
+{\footnotesize
+\begin{minipage}[t]{3.0cm}
+    Rainbow
+\end{minipage}
+\begin{minipage}[t]{3.0cm}
+    Sinebow
+\end{minipage}
+}
+

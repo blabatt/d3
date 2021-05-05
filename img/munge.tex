@@ -1,0 +1,62 @@
+%\begin{tikzpicture}[call/.style={
+%rectangle,%minimum size=6mm,rounded corners=3mm, % The rest
+%very thick,draw=black!50,
+%top color=white,bottom color=black!20, font=\ttfamily}]
+
+%    \graph[grow right sep, branch down=7mm]{
+%        {data, nest/$d3.nest()$, file/$obs.FileAttachment()$} -> hier/$d3.hierarchy()$ -> tree/$d3.treemap()$ -> join/$d3.data()$;
+%        {dsv/$d3.dsv()$, text/$obs.Files.text()$, url/$obs.Files.url()$} ->[complete bipartite] {csvp/$d3.csvParse()$, dsvp/$d3.dsvFormat(delim)$} -> strat/$d3.stratify()$;
+%    };
+%\end{tikzpicture}
+
+
+\begin{tikzpicture}[call/.style={
+rectangle,minimum size=6mm,rounded corners=3mm, % The rest
+very thick,draw=black!50,
+top color=white,bottom color=black!20, font=\ttfamily}]
+
+\tikzset{
+  title/.style={font={\large\bfseries}},
+  every edge/.append style = {thick,->}% commenting this solves the problem
+}
+
+    \node[call,minimum height=51mm,minimum width=42mm] at (0,0) (file) {};
+    \node[title,below] at (file.north) {Raw File};
+    \node[call, below=6mm of file.north] (dtext) {d3.text()}; 
+    \node[call, below=1mm of dtext.south] (otext) {obs.Files.text()};
+    \node[call, below=1mm of otext.south] (dsv) {d3.dsv()}; 
+    \node[call, below=1mm of dsv.south] (csv) {d3.csv()}; 
+    \node[call, below=1mm of csv.south] (url) {obs.Files.url()};
+    \node[call, below=1mm of url.south] (attach) {obs.F\textquotesingle Attach\textquotesingle ().text()};
+
+    \node[call, minimum height=22mm,minimum width=30mm,right=of file] (parse) {};
+    \node[title,below] at (parse.north) {Parser};
+    \node[call,below=6mm of parse.north] (csvp) {d3.csvParse()}; 
+    \node[call,below=1mm of csvp.south] (format) {d3.dsvFormat()};
+
+    \node[call, minimum height=29mm,minimum width=30mm,right=of parse] (organize) {};
+    \node[title,below] at (organize.north) {Organizer};
+    \node[call, below=6mm of organize.north](nest) {d3.nest()};
+    \node[call, below=1mm of nest.south] (stratify) {d3.stratify()};
+    \node[call, below=1mm of stratify.south] (hierarchy) {d3.hierarchy()};
+
+    \node[call, minimum height=22mm,minimum width=30mm,right=of organize] (layout) {};
+    \node[title,below] at (layout.north) {Layout};
+    \node[call, below=6mm of layout.north] (tree) {d3.treemap()};
+    \node[call, below=1mm of tree.south] (force) {d3.force()};
+
+    \node[call, minimum height=22mm,minimum width=35mm,right=of layout] (dom) {};
+    \node[title,below] at (dom.north) {DOM};
+    \node[call, below=6mm of dom.north] (data) {<selection>.data()};
+    \node[call, below=1mm of data.south] (join) {<selection>.join()};
+    
+    \draw 
+        (file) edge[] (parse) 
+        (parse) edge[] (organize)
+        (organize) edge[] (layout)
+        (layout) edge[] (dom);
+    %\draw (file) edge[] (parse);
+    %\draw (file) edge[] (parse);
+
+\end{tikzpicture}
+

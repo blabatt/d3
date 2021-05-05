@@ -1,0 +1,32 @@
+
+
+\begin{tikzpicture}[call/.style={
+rectangle,minimum size=6mm,rounded corners=3mm, % The rest
+very thick,draw=black!50,
+top color=white,bottom color=black!20, font=\ttfamily}]
+
+\tikzset{
+  title/.style={font={\large\bfseries}},
+  every edge/.append style = {thick,->}% commenting this solves the problem
+}
+
+    \node[call,minimum height=44mm,minimum width=42mm] at (0,0) (scale) {};
+    \node[title,below] at (scale.north) {Scales};
+    \node[call, below=6mm of scale.north] (continuous) {Continuous}; 
+    \node[call, below=1mm of continuous.south] (sequential) {Sequntial};
+    \node[call, below=1mm of sequential.south] (diverging) {Diverging};
+    \node[call, below=1mm of diverging.south] (quantize) {quantize};
+    \node[call, below=1mm of quantize.south] (ordinal) {Ordinal};
+
+    \node[call, minimum height=36mm,minimum width=30mm,right=of file] (axis) {};
+    \node[title,below] at (axis.north) {Axes};
+    \node[call,below=6mm of axis.north] (top) {Top}; 
+    \node[call,below=1mm of top.south] (right) {Right};
+    \node[call,below=1mm of right.south] (bottom) {Bottom};
+    \node[call,below=1mm of bottom.south] (left) {Left};
+
+    \draw 
+        (scale) edge[] (axis);
+
+\end{tikzpicture}
+

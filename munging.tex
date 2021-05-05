@@ -1,0 +1,225 @@
+\section{Munging \& Formatting}
+
+\textit{Data importation process can be complex. Here is a somewhat general pattern:}\\
+\resizebox{6.5cm}{!}{\input{img/munge}} \\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-dsv}{Delimiter-Separated}}{\href{https://observablehq.com/@d3/parse-csv-with-duplicate-column-names}{<dsv>}}
+
+\textit{[De-]Serialize raw files. (Can alternatively use concomitant \href{https://github.com/d3/d3-dsv\#command-line-reference}{command-line tool}.)}
+
+
+{\footnotesize 
+\begin{minipage}[t]{2.0cm}
+    parse\\
+    formatBody\\
+    formatValue
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    \href{https://observablehq.com/@d3/parse-csv-with-duplicate-column-names}{parseRows}\\
+    formatRows\\
+    \href{https://observablehq.com/@d3/d3-autotype}{autoType}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    format\\
+    formatRow\\
+\end{minipage}
+}
+
+\code{d3.dsvFormat(\textquotedbl |\textquotedbl ).parse(\textquotedbl foo|bar\textbackslash n1|2\textquotedbl );}
+
+
+\textit{For CSV, TSV, $\exists$ top-level shorthands for the above:}%\texttt{d3.csvParse()}.
+\code{d3.csvParse(\textquotedbl foo,bar\textbackslash n1,2\textquotedbl );}\\
+\code{d3.tsvParse(\textquotedbl foo\textbackslash tbar\textbackslash n1\textbackslash t2\textquotedbl );}\\
+\code{d3.csvFormat([\{foo: \textquotedbl 1\textquotedbl , bar: \textquotedbl 2\textquotedbl \}]);}\\
+\code{d3.tsvFormat([\{foo: \textquotedbl 1\textquotedbl , bar: \textquotedbl 2\textquotedbl \}]); }\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-array}{Arrays}}{d3}
+
+\textit{Extending the already-extensive set of \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array}{native javascript array functions}, these top-level methods take an array and yield transformations or statistical meta-information.}
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    \href{https://observablehq.com/@d3/d3-extent}{min}\\
+    \href{https://observablehq.com/@d3/d3-sum}{sum}\\
+    \href{https://observablehq.com/@d3/d3-mean-d3-median-and-friends}{variance}\\
+    \href{https://observablehq.com/@d3/d3-bisect}{bisect}\\
+    bisector\\
+    \href{https://observablehq.com/@d3/d3-mean-d3-median-and-friends}{quantile}\\
+    \href{https://observablehq.com/@d3/d3-cross}{cross}\\
+    \href{https://observablehq.com/@d3/d3-permute}{permute}\\
+    \href{https://observablehq.com/@d3/d3-ticks}{tickIncrement}\\
+    \href{https://observablehq.com/@d3/d3-transpose}{transpose}\\
+    \href{https://observablehq.com/@d3/d3-least}{least}
+    \href{https://observablehq.com/@d3/d3-group-d3-rollup}{index[es]}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    \href{https://observablehq.com/@d3/d3-extent}{max}\\
+    \href{https://observablehq.com/@d3/d3-mean-d3-median-and-friends}{mean}\\
+    \href{https://observablehq.com/@d3/d3-mean-d3-median-and-friends}{deviation}\\
+    \href{https://observablehq.com/@d3/d3-bisect}{bisectLeft}\\
+    \href{https://observablehq.com/@d3/d3-quickselect}{quickselect}\\
+    \href{https://observablehq.com/@d3/d3-ascending}{ascending}\\
+    \href{https://observablehq.com/@d3/d3-merge}{merge}\\
+    \href{https://observablehq.com/@d3/d3-shuffle}{shuffle}\\
+    \href{https://observablehq.com/@d3/d3-ticks}{tickStep}\\
+    \href{https://observablehq.com/@d3/d3-greatest}{least}\\
+    \href{https://observablehq.com/@d3/d3-group-d3-rollup}{group}\\
+    \href{https://observablehq.com/@d3/d3-group-d3-rollup}{rollup[s]}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    \href{https://observablehq.com/@d3/d3-extent}{extent}\\
+    \href{https://observablehq.com/@d3/d3-mean-d3-median-and-friends}{median}\\
+    \href{https://observablehq.com/@d3/d3-cumsum}{cumsum}\\
+    \href{https://observablehq.com/@d3/d3-fsum}{fsum}\\
+    scan\\
+    bisectRight\\
+    \href{https://observablehq.com/@d3/d3-ascending}{descending}\\
+    \href{https://observablehq.com/@d3/d3-pairs}{pairs}\\
+    \href{https://observablehq.com/@d3/d3-ticks}{ticks}\\
+    \href{https://observablehq.com/@d3/d3-range}{range}\\
+    \href{https://observablehq.com/@d3/d3-group-d3-rollup}{groups}\\
+    \href{https://observablehq.com/@d3/d3-transpose}{zip}
+\end{minipage}
+}
+
+
+\textit{Can also sub-divide array data into bins using }\href{https://github.com/d3/d3-array/\#histograms}{\texttt{d3.histogram()}}\textit{and its methods.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-hierarchy}{Hierarchies}}{\href{https://observablehq.com/@d3/d3-hierarchy}{<node>}}
+\textit{Format data into nested, \href{https://observablehq.com/@d3/d3-hierarchy}{tree-like structure}. Create with top-level call }\texttt{d3.hierarchy()}\textit{, which returns parent node.}
+
+\href{https://observablehq.com/@d3/d3-hierarchy}{
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    ancestors\\
+    path\\
+    \href{https://observablehq.com/@d3/visiting-a-d3-hierarchy}{count}\\
+    \href{https://observablehq.com/@d3/visiting-a-d3-hierarchy}{eachAfter}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    descendents\\
+    links\\
+    \href{https://observablehq.com/@d3/visiting-a-d3-hierarchy}{sort}\\
+    \href{https://observablehq.com/@d3/visiting-a-d3-hierarchy}{eachBefore}
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    leaves\\
+    \href{https://observablehq.com/@d3/visiting-a-d3-hierarchy}{sum}\\
+    \href{https://observablehq.com/@d3/visiting-a-d3-hierarchy}{each}\\
+    copy
+\end{minipage}
+}
+}
+
+
+\href{https://github.com/d3/d3-hierarchy/\#stratify}{\texttt{d3.stratify}}\textit{ \href{https://observablehq.com/@d3/d3-stratify}{transforms data} from \say{link format} into a proper }\texttt{hierarchy}.
+
+
+\begin{comment}
+%--> The follow has been deprecated <--%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-array}{Collections}}{<collctn>}
+
+\textit{\href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Map}{Maps} and \href{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Set}{Sets} }
+\textit{are are similar to javascript data structures of the same name, adding extra features. \href{http://bl.ocks.org/shancarter/raw/4748131/}{Nests} \href{http://bl.ocks.org/phoebebright/raw/3176159/}{are unique} to D3.}
+
+\texttt{d3.map}\textit{s:}\\
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    has\\
+    remove\\
+    values\\
+    each
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    get\\
+    clear\\
+    entries\\
+    size
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    set\\
+    keys\\
+    empty
+\end{minipage}
+}
+\\[1mm]
+
+\texttt{d3.set}\textit{s:}\\
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    has\\
+    clear\\
+    entry
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    add\\
+    values\\
+    size
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    remove\\
+    each\\
+\end{minipage}
+}
+\\[1mm]
+
+
+\texttt{d3.nest}\textit{s afford grouping into arbitrary hierarchies:}
+
+{\footnotesize
+\begin{minipage}[t]{2.0cm}
+    sortKeys\\
+    map
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    sortValues\\
+    object
+\end{minipage}
+\begin{minipage}[t]{2.0cm}
+    rollup\\
+    entries
+\end{minipage}
+}
+\\[1mm]
+
+
+\textit{To retrieve information from normal javascript objects, use: }\texttt{d3.keys}, \texttt{d3.values}\textit{, or }\texttt{d3.entries}.
+\end{comment}
+
+
+\ 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{\href{https://github.com/d3/d3-format}{Number Formats}}
+\textit{Pass a }\texttt{specifier}\textit{ string to a formatter, eg:}
+
+\entry{45mm}{d3.format(\textquotedbl.0\%\textquotedbl )(0.123);}{12\%}\\
+\entry{45mm}{d3.format(\textquotedbl (\$.2f\textquotedbl )(-3.5);}{(£3.50)}\\
+\entry{45mm}{d3.format(\textquotedbl .2s\textquotedbl )(42e6);}{42M}\\
+\entry{45mm}{d3.format(\textquotedbl \#x\textquotedbl )(48879);}{0xbeef}\\
+\entry{45mm}{d3.format(\textquotedbl ,.2r\textquotedbl )(4223);}{4,200}\\
+
+
+\textit{...where }\texttt{specifier}\textit{ takes the form:}
+\begin{lstlisting}
+[[fill]align][sign][symbol][0]
+[width][,][.precision][~][type]
+\end{lstlisting}
+
+\textit{Serialize specifiers with }\texttt{d3.formatSpecifier}\textit{. Create formatter for non-default \say{locale} with }\texttt{d3.formatLocale}\textit{. Add SI Unit prefixes with }\href{http://bl.ocks.org/mbostock/9764126}{\texttt{<locale>.formatPrefix}}:\\
+\entry{52mm}{d3.formatPrefix(\textquotedbl ,.0\textquotedbl , 1e-6)(.00042);}{420µ}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{Time \href{https://github.com/d3/d3-time-format}{Formatting} \& \href{https://github.com/d3/d3-time}{Calc}}{d3.time-}
+
+\vspace{2mm}

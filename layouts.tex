@@ -1,0 +1,79 @@
+\section{Layouts}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-chord}{Chord Layout\textsubscript{L}}}{\href{https://observablehq.com/@d3/chord-diagram}{<chord>}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-force}{Force Layout\textsubscript{L}}}{\href{https://observablehq.com/@d3/force-directed-tree}{<simulation>}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-delaunay}{Voronoi Layout\textsubscript{L}}}{\href{https://observablehq.com/@d3/hover-voronoi}{<delaunay>}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#pies}{Pies}}{\href{http://bl.ocks.org/mbostock/9b5a2fd1ce1a146f27e4}{<pie>}}
+\textit{Lays out a set of arc angles (wedges) for use as input to }\texttt{arc}\textit{s, in creating a \href{https://observablehq.com/@d3/pie-chart}{pie chart}.}
+
+\begin{tinylist}{3}
+    \item value
+    \item sort
+    \item sortValues
+    \item startAngle
+    \item endAngle
+    \item padAngle
+\end{tinylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-sankey}{Sankey Layout\textsubscript{L}}}{d3}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-hierarchy/\#pack}{Pack Layout\textsubscript{L}}}{d3}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-hierarchy/\#partition}{Partition Layout\textsubscript{L}}}{d3}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-hierarchy/\#cluster}{Cluster Layout\textsubscript{L}}}{d3}
+\textit{Used to create a \href{https://observablehq.com/@d3/cluster-dendrogram}{dendogram} diagram.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-hierarchy/\#treemap}{Treemap Layout\textsubscript{L}}}{d3}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-shape\#stacks}{Stacks\textsubscript{L}}}{<stack>}
+\textit{Generates stacking positions (in a multidimensional array $m\times n$ for $m$ series, $n$ points), which are used as input to }\texttt{area}\textit{s in creating \href{https://observablehq.com/@mbostock/streamgraph-transitions}{steamgraphs}, or directly in positioning \href{https://observablehq.com/@d3/stacked-bar-chart}{stacked bars}.}
+
+\begin{tinylist}{3}
+    \item keys
+    \item value
+    \item order
+    \item offset
+\end{tinylist}
+
+\textit{Top-level algs to pass to order, offset methods:}
+\begin{tabular}{l l}
+    \underline{order} & \underline{offset} \\
+    -Order & -Expand \\
+    -Ascending & -Diverging \\
+    -Descending & -None \\
+    -InsideOut & -Silouhette \\
+    -None & -Wiggle \\
+    -Reverse & \\
+\end{tabular}

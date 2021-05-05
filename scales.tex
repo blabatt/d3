@@ -1,0 +1,132 @@
+\section{\href{https://github.com/d3/d3-scale}{Scales} \& Axes}
+
+\begin{wrapfigure}[3]{l}{4.0cm}
+\vspace{-5mm}
+\href{https://medium.com/@mbostock/introducing-d3-scale-61980c51545f}{\resizebox{!}{2cm}{\input{img/axis}}}
+\end{wrapfigure}
+
+\textit{See also \href{http://www.jeromecukier.net/2011/08/11/d3-scales-and-color/}{here} for a lovely visual explanation.}\\
+
+
+
+\ \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-scale\#continuous-scales}{Continuous}}{\href{https://observablehq.com/@d3/continuous-scales}{<scale>}}
+
+\textit{Sub-types: \href{https://observablehq.com/@d3/continuous-scales\#scale\_pow}{power\textsuperscript{p}}, \href{https://observablehq.com/@d3/continuous-scales\#scale\_log}{log\textsuperscript{l}}, \href{https://observablehq.com/@d3/d3-scaletime}{time\textsuperscript{t}}:}
+\begin{tinylist}{3}
+    \item invert
+    \item domain
+    \item range
+    \item rangeRound
+    \item clamp
+    \item interpolate
+    \item unknown
+    \item ticks
+    \item tickFormat
+    \item nice
+    \item copy
+    \item exponent\textsuperscript{p}
+    \item base\textsuperscript{l}
+\end{tinylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-scale\#sequential-scales}{Sequential}}{\href{https://observablehq.com/@d3/sequential-scales}{d3.scaleSquential-}}
+
+\begin{tinylist}{5}
+    \item Log
+    \item Pow
+    \item Sqrt
+    \item Symlog
+    \item Quantile
+\end{tinylist}  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-scale\#diverging-scales}{Diverging}}{\href{https://observablehq.com/@d3/diverging-scales}{d3.scaleDiverging}}
+
+\begin{tinylist}{4}
+    \item Log
+    \item Pow
+    \item Sqrt
+    \item Symlog
+\end{tinylist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-scale\#quantize-scales}{Quantize}}{\href{https://observablehq.com/@d3/quantile-quantize-and-threshold-scales}{<scale>}}
+
+\textit{Sub-types: quantile\textsuperscript{l}, quantize\textsuperscript{z}, threshold\textsuperscript{t}:}
+
+\href{https://observablehq.com/@d3/quantile-quantize-and-threshold-scales}{
+{\footnotesize
+\begin{minipage}[t]{2cm}
+    invertExtent\\
+    nice\textsuperscript{z}\\
+    copy
+\end{minipage}
+\begin{minipage}[t]{2cm}
+    domain\\
+    \href{https://observablehq.com/@d3/scale-ticks}{ticks\textsuperscript{z}}\\
+    quantiles\textsuperscript{l}
+\end{minipage}
+\begin{minipage}[t]{2.2cm}
+    range\\
+    \href{https://observablehq.com/@d3/scale-ticks}{tickFormat\textsuperscript{z}}
+\end{minipage}
+}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-scale\#quantile-scales}{Ordinal}}{\href{https://observablehq.com/@d3/d3-scaleordinal}{<scale>}}
+
+
+\textit{Sub-types: \href{https://observablehq.com/@d3/d3-scaleordinal}{ordinal\textsuperscript{o}}, \href{https://observablehq.com/@d3/d3-scaleband}{band\textsuperscript{b}}, \href{https://observablehq.com/@d3/d3-scalepoint}{point\textsuperscript{p}}:}
+
+
+\href{https://observablehq.com/@d3/d3-scaleordinal}{
+{\footnotesize
+\begin{minipage}[t]{1.8cm}
+    domain\\
+    range\\
+    copy\\
+    unknown\textsuperscript{o}
+\end{minipage}
+\begin{minipage}[t]{2.4cm}
+    rangeRound\textsuperscript{b,p}\\
+    round\textsuperscript{b,p}\\
+    paddingInner\textsuperscript{b}\\
+    paddingOuter\textsuperscript{b}
+\end{minipage}
+\begin{minipage}[t]{2cm}
+    padding\\
+    align\textsuperscript{b,p}\\
+    bandwidth\textsuperscript{b,p}\\
+    step\textsuperscript{b,p}
+\end{minipage}
+}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsec{\href{https://github.com/d3/d3-axis}{Axes}}{\href{https://observablehq.com/@d3/styled-axes}{<axis>}}
+
+\textit{Unlike scales, axes are side-effect-having, DOM-manipulating \say{layouts}. As such, d3-level calls must differentiate by location on page: }\texttt{d3.axisTop}\textsubscript{L}\textit{, }\texttt{d3.axisRight}\textsubscript{L}\textit{, }\texttt{d3.axisBottom}\textsubscript{L},\textit{, and }\texttt{d3.axisLeft}\textsubscript{L}\textit{. Axis methods are:}
+
+%\begin{comment}
+{\footnotesize
+\begin{minipage}[t]{2.1cm}
+\href{https://observablehq.com/@d3/scale-ticks}{tickValues}\\
+\href{https://observablehq.com/@d3/scale-ticks}{tickSizelnner}
+\end{minipage}
+\begin{minipage}[t]{2.1cm}
+\href{https://observablehq.com/@d3/scale-ticks}{tickFormat}\\
+\href{https://observablehq.com/@d3/scale-ticks}{tickSizeOuter}
+\end{minipage}
+\begin{minipage}[t]{2cm}
+\href{https://observablehq.com/@d3/scale-ticks}{tickSize}\\
+\href{https://observablehq.com/@d3/scale-ticks}{tickPadding}
+\end{minipage}
+}
+%\end{comment}
